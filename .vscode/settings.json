@@ -14,6 +14,8 @@
       "*.hpp": "cpp",
       "xstddef": "c",
       "type_traits": "c",
-      "utility": "c"
+      "utility": "c",
+      "*.tcc": "c",
+      "cstdio": "c"
     }
 }

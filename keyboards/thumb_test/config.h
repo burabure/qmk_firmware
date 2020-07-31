@@ -1,5 +1,5 @@
 /*
-Copyright 2019 Nicolas <BuraBure> Fernandez
+Copyright 2020 Nicolas <BuraBure> Fernandez
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,15 +24,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID 0x0000
 #define DEVICE_VER 0x0001
 #define MANUFACTURER Nicolas <BuraBure> Fernandez
-#define PRODUCT Dactyl Manuform
+#define PRODUCT thumb_test
 #define DESCRIPTION A custom keyboard
-#define USE_I2C
-#define SPLIT_HAND_PIN F5
-// #define SOFT_SERIAL_PIN D0
 
 /* key matrix size */
-#define MATRIX_ROWS 12
-#define MATRIX_COLS 6
+#define MATRIX_ROWS 2
+#define MATRIX_COLS 3
+
+#define MOUSE_X F6      // A3
+#define MOUSE_Y F4      // A1
+#define MOUSE_LEFT F5   // A2
 
 /*
  * Keyboard Matrix Assignments
@@ -44,10 +45,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS \
-    { D3, D2, D4, C6, D7, E6 }
-#define MATRIX_COL_PINS \
-    { B6, B2, B3, B1, F7, F6 }
+#define MATRIX_ROW_PINS { D0, D5 }
+#define MATRIX_COL_PINS { F1, F0, B0 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL*/
@@ -56,29 +55,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
  */
-// #define SOFT_SERIAL_PIN D0  // or D1, D2, D3, E6
+#define SOFT_SERIAL_PIN D0  // or D1, D2, D3, E6
 
 // #define BACKLIGHT_PIN B7
 // #define BACKLIGHT_BREATHING
 // #define BACKLIGHT_LEVELS 3
 
-#define RGB_DI_PIN F4
-#ifdef RGB_DI_PIN
-#    define RGBLED_NUM 26
-#    define RGBLED_SPLIT \
-        { 13, 13 }
-//  #define RGBLIGHT_SPLIT
+// #define RGB_DI_PIN E2
+// #ifdef RGB_DI_PIN
+//   #define RGBLED_NUM 16
 //   #define RGBLIGHT_HUE_STEP 8
 //   #define RGBLIGHT_SAT_STEP 8
 //   #define RGBLIGHT_VAL_STEP 8
-#    define RGBLIGHT_LIMIT_VAL 120 /* The maximum brightness level */
-#    define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
-/*== all animations enable ==*/
-// #    define RGBLIGHT_ANIMATIONS
-/*== or choose animations ==*/
+//   #define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
+//   #define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
+// /*== all animations enable ==*/
+//   #define RGBLIGHT_ANIMATIONS
+// /*== or choose animations ==*/
 //   #define RGBLIGHT_EFFECT_BREATHING
-#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+//   #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+//   #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 //   #define RGBLIGHT_EFFECT_SNAKE
 //   #define RGBLIGHT_EFFECT_KNIGHT
 //   #define RGBLIGHT_EFFECT_CHRISTMAS
@@ -91,22 +87,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //   /*==== use exp() and sin() ====*/
 //   #define RGBLIGHT_EFFECT_BREATHE_CENTER 1.85  // 1 to 2.7
 //   #define RGBLIGHT_EFFECT_BREATHE_MAX    255   // 0 to 255
-#endif
-
-#define TAPPING_TOGGLE 2
-
-#define B5_AUDIO
-#define NO_MUSIC_MODE
-
-#ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(PLANCK_SOUND)
-#endif
-
-#define MOUSEKEY_INTERVAL       16
-#define MOUSEKEY_DELAY          25
-#define MOUSEKEY_TIME_TO_MAX    60
-#define MOUSEKEY_MAX_SPEED      4
-// #define MK_3_SPEED
+// #endif
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
@@ -204,10 +185,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 /* disable debug print */
-// #define NO_DEBUG
+//#define NO_DEBUG
 
 /* disable print */
-// #define NO_PRINT
+//#define NO_PRINT
 
 /* disable action features */
 //#define NO_ACTION_LAYER
